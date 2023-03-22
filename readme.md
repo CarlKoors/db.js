@@ -21,5 +21,35 @@ require('*WHATEVER FOLDER\db.js*');
 main.js is stored in the subdirectory.
 
 >How to create a database
-
-  
+This is actually really simple as the create function only<br>
+takes one variable and thats the name of the database as a <br>
+string.
+Example
+main.js
+```
+const db = require('./Modules/db.js');
+db.create('Balances');
+```
+>Adding your first entry.
+Entries are stores as Key-Value pairs. The key pointing to a file,<br>
+and the value being a json object. The function you use is edit as it<br>
+can be usedto create and edit key values.
+Example
+main.js
+```
+const db = require('./Modules/db.js');
+db.create('Balances');
+// remember the edit function only takes strings
+let jsonObject = {
+  "Checking": "100",
+  "Savings": "1"
+};
+db.edit('Balances', 'Bob', jsonObject);
+```
+You can also do it in a one liner like this.
+```
+const db = require('./Modules/db.js');
+db.create('Balances');
+// one liner
+db.edit('Balances', 'Bob', JSON.stringify({"Checking": "100","Savings": "1"}));
+```
