@@ -21,6 +21,7 @@ require('*WHATEVER FOLDER\db.js*');
 main.js is stored in the subdirectory.
 
 >How to create a database
+
 This is actually really simple as the create function only<br>
 takes one variable and thats the name of the database as a <br>
 string.
@@ -31,6 +32,7 @@ const db = require('./Modules/db.js');
 db.create('Balances');
 ```
 >Adding your first entry.
+
 Entries are stores as Key-Value pairs. The key pointing to a file,<br>
 and the value being a json object. The function you use is edit as it<br>
 can be usedto create and edit key values.
