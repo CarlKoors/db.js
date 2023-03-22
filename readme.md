@@ -72,4 +72,20 @@ REMEMBER TO SAVE YOUR WORK
 ```
 db.edit('Balances', 'Bob', bobsBalance);
 ```
+>Checking if a Database or Key exists.
 
+This is super simple to check if a key exists.
+```
+db.exists('Balances', 'Tony'); // would return false
+db.exists('notarealdb', 'Bob'); // would return false
+db.exists('Balances', 'Bob'); // would return true
+```
+>How to remove a key and drop a database.
+Again super basic function with only string params.
+```
+// to remove a specific key.
+db.remove('Balances', 'Bob'); // Bobs gone
+// to remove an entire database.
+db.drop('Balances');
+```
+Thats it you can now build a huge database with ease.
