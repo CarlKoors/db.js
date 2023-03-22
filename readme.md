@@ -1,4 +1,4 @@
-#DB.js
+# DB.js
 
   Hello! Db.js is a simple to setup and use database system.<br>
 You can use it with anything nodejs. Its designed to seperate each<br>
@@ -15,7 +15,7 @@ the same time without risking Database truncation.
   
 require('*WHATEVER FOLDER\db.js*');
   
-#Documentation
+## Documentation
 
   Let's assume that db.js is stored in Modules, and <br>
 main.js is stored in the subdirectory.
