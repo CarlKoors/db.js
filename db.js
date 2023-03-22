@@ -1,3 +1,7 @@
+// made by Carl Koors
+// leaving  this would be nice
+// since your here should I make this into a website so its even easier on beginners?
+
 fs = require('fs'); // we are using the file stream since its the simplist way to mess with the file system.
 path = require('path'); // because aparrently nodejs randomly forgets what dir its in.
 
@@ -22,7 +26,7 @@ module.exports.edit = (Database, Key, Value) => {
 
 module.exports.drop = (Database) => {
   fs.readdirSync(path.join(__dirname, '../Databases/'+Database)).forEach(file => { // this is because in linux you cant use rmdir to remove a file... IK its annoying
-	if (file.includes('.')) fs.unlinkSync(path.join(__dirname, '../Databases/'+Database+'/' + file));
+    if (file.includes('.')) fs.unlinkSync(path.join(__dirname, '../Databases/'+Database+'/' + file));
   });
   fs.rmdirSync(path.join(__dirname, '../Databases/'+Database)); // then we can delete the whole database structure
   return true;
