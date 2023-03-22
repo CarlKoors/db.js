@@ -33,7 +33,7 @@ db.create('Balances');
 ```
 >Adding your first entry.
 
-Entries are stores as Key-Value pairs. The key pointing to a file,<br>
+Entries are stored as Key-Value pairs. The key pointing to a file,<br>
 and the value being a json object. The function you use is edit as it<br>
 can be usedto create and edit key values.
 Example
@@ -55,3 +55,21 @@ db.create('Balances');
 // one liner
 db.edit('Balances', 'Bob', JSON.stringify({"Checking": "100","Savings": "1"}));
 ```
+>Modifying and Reading Values
+
+This is super simple as the parse function returns the json object<br>
+which is stored in the Key file.
+```
+let bobsBalance = db.parse('Balances', 'Bob');
+```
+You can now modify the json object like this.
+```
+bobsBalance.Checking = bobsBalance.Checking+1;
+// or even this way
+bobsBalance['Checking']+=1;
+```
+REMEMBER TO SAVE YOUR WORK
+```
+db.edit('Balances', 'Bob', bobsBalance);
+```
+
