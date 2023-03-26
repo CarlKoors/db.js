@@ -35,7 +35,7 @@ db.create('Balances');
 
 Entries are stored as Key-Value pairs. The key pointing to a file,<br>
 and the value being a json object. The function you use is edit as it<br>
-can be usedto create and edit key values.
+can be used to create and edit key values.
 Example
 main.js
 ```
@@ -81,6 +81,7 @@ db.exists('notarealdb', 'Bob'); // would return false
 db.exists('Balances', 'Bob'); // would return true
 ```
 >How to remove a key and drop a database.
+ 
 Again super basic function with only string params.
 ```
 // to remove a specific key.
