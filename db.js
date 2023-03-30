@@ -19,7 +19,6 @@ module.exports.exists = (Database, Key) => {
 }
 
 module.exports.edit = (Database, Key, Value) => {
-  delete require.cache[require.resolve(path.join(__dirname, '../Databases/'+Database+'/'+Key+'.json'))];
   fs.writeFileSync(path.join(__dirname, '../Databases/'+Database+'/'+Key+'.json'),  JSON.stringify(Value, null, 2)); // saves the Value input as a json object
   return true;
 }
@@ -34,7 +33,6 @@ module.exports.drop = (Database) => {
 
 module.exports.remove = (Database, Key) => { // in case you want to prune a db you could iterate throught the db and "remove" the null object values.
   if (!fs.existsSync(path.join(__dirname, '../Databases/'+Database+'/'))) return false;
-  delete require.cache[require.resolve(path.join(__dirname, '../Databases/'+Database+'/'+Key+'.json'))];
   fs.unlinkSync(path.join(__dirname, '../Databases/'+Database+'/'+Key+'.json'));
   return true;
 }
