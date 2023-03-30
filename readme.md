@@ -25,8 +25,9 @@ main.js is stored in the subdirectory.
 This is actually really simple as the create function only<br>
 takes one variable and thats the name of the database as a <br>
 string.
+
 Example
-main.js
+
 ```
 const db = require('./Modules/db.js');
 db.create('Balances');
@@ -36,8 +37,9 @@ db.create('Balances');
 Entries are stored as Key-Value pairs. The key pointing to a file,<br>
 and the value being a json object. The function you use is edit as it<br>
 can be used to create and edit key values.
+
 Example
-main.js
+
 ```
 const db = require('./Modules/db.js');
 db.create('Balances');
@@ -57,16 +59,17 @@ db.edit('Balances', 'Bob', JSON.stringify({"Checking": "100","Savings": "1"}));
 ```
 >Modifying and Reading Values
 
-This is super simple as the parse function returns the json object<br>
+The parse function returns a json object
+
 which is stored in the Key file.
+
 ```
 let bobsBalance = db.parse('Balances', 'Bob');
 ```
-You can now modify the json object like this.
+You can now modify the json object like normal.
 ```
 bobsBalance.Checking = bobsBalance.Checking+1;
-// or even this way
-bobsBalance['Checking']+=1;
+bobsBalance['Checking']='something';
 ```
 REMEMBER TO SAVE YOUR WORK
 ```
